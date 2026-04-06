@@ -1,0 +1,8 @@
+Requirement already satisfied: python-jose[cryptography] in c:\hafsa\work\projects\tenant_management_system\env\lib\site-packages (3.5.0)
+Requirement already satisfied: ecdsa!=0.15 in c:\hafsa\work\projects\tenant_management_system\env\lib\site-packages (from python-jose[cryptography]) (0.19.2)
+Requirement already satisfied: rsa!=4.1.1,!=4.4,<5.0,>=4.0 in c:\hafsa\work\projects\tenant_management_system\env\lib\site-packages (from python-jose[cryptography]) (4.9.1)
+Requirement already satisfied: pyasn1>=0.5.0 in c:\hafsa\work\projects\tenant_management_system\env\lib\site-packages (from python-jose[cryptography]) (0.6.3)
+Requirement already satisfied: cryptography>=3.4.0 in c:\hafsa\work\projects\tenant_management_system\env\lib\site-packages (from python-jose[cryptography]) (46.0.6)
+Requirement already satisfied: cffi>=2.0.0 in c:\hafsa\work\projects\tenant_management_system\env\lib\site-packages (from cryptography>=3.4.0->python-jose[cryptography]) (2.0.0)
+Requirement already satisfied: six>=1.9.0 in c:\hafsa\work\projects\tenant_management_system\env\lib\site-packages (from ecdsa!=0.15->python-jose[cryptography]) (1.17.0)
+Requirement already satisfied: pycparser in c:\hafsa\work\projects\tenant_management_system\env\lib\site-packages (from cffi>=2.0.0->cryptography>=3.4.0->python-jose[cryptography]) (3.0)
