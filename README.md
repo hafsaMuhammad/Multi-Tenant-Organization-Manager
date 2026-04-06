@@ -9,7 +9,8 @@ A secure, async, multi-tenant backend service built with **FastAPI**, **SQLAlche
 ```bash
 # 1. Clone the repo
 git clone https://github.com/hafsaMuhammad/Multi-Tenant-Organization-Manager.git
-cd org-manager
+
+cd Multi-Tenant-Organization-Manager\
 
 # 2. Set environment variables
 cp .env.example .env
@@ -109,9 +110,9 @@ org-manager/
 └────────────────────────────────────────┘
 ```
 
-## Database Design
+<!-- ## Database Design
 
-![Database Design](docs/db-design.png)
+![Database Design](docs/db-design.png) -->
 
 **Key constraints:**
 - `memberships(user_id, org_id)` — unique index (one role per user per org)
