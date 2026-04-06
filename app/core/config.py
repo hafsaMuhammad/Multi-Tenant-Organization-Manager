@@ -4,11 +4,11 @@ from functools import lru_cache
 
 class Settings(BaseSettings):
     DATABASE_URL: str = "postgresql+asyncpg://postgres:postgres@localhost:5432/orgmanager"
-    SECRET_KEY: str = "change-me-in-production"
+    SECRET_KEY: str 
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
-    ANTHROPIC_API_KEY: str = ""
-    DEBUG: bool = False  # ← make sure this line exists
+    GEMINI_API_KEY:str
+    DEBUG: bool = False 
 
     class Config:
         env_file = ".env"

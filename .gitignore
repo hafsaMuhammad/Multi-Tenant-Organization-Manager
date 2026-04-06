@@ -2,4 +2,5 @@ env/
 __pycache__/
 *.pyc
 .env
+.env.*
 alembic/versions/__pycache__/

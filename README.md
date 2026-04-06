@@ -14,7 +14,19 @@ cd Multi-Tenant-Organization-Manager\
 
 # 2. Set environment variables
 cp .env.example .env
-# Edit .env – at minimum set ANTHROPIC_API_KEY for the chatbot feature
+
+## AI Setup
+
+This project uses Google Gemini free API.
+
+Get free key:
+
+https://aistudio.google.com
+
+Add to .env:
+
+GEMINI_API_KEY=your_key
+
 
 # 3. Start everything
 docker compose up --build
@@ -171,7 +183,7 @@ Tests require Docker to be running (testcontainers uses it for the Postgres cont
 | `SECRET_KEY` | (required) | JWT signing key (min 32 chars) |
 | `ALGORITHM` | `HS256` | JWT algorithm |
 | `ACCESS_TOKEN_EXPIRE_MINUTES` | `1440` | Token TTL (24h) |
-| `ANTHROPIC_API_KEY` | `""` | Claude API key for chatbot |
+| `GEMINI_API_KEY` | `""` | Google API key for chatbot |
 | `DEBUG` | `false` | SQLAlchemy echo mode |
 
 ---
@@ -197,7 +209,7 @@ Used native `tsvector`/`tsquery` with a GIN index instead of ILIKE or external s
 `AuditLog.org_id` is nullable so registration events (pre-org) can still be logged. The `details` JSONB column stores context without needing to alter the schema for new action types.
 
 ### 7. Streaming Chatbot via SSE
-The chatbot endpoint uses Server-Sent Events (`text/event-stream`) with Anthropic's streaming SDK. Non-streaming falls back to a synchronous response. The AI is given only **today's logs** to keep prompts focused and costs low.
+The chatbot endpoint uses Server-Sent Events (`text/event-stream`) with Google's Gemini streaming API. Non-streaming requests fall back to a synchronous response. The AI is provided only **today's audit logs** to keep prompts focused, improve response relevance, and minimize API usage.
 
 ### 8. Table Creation vs. Alembic
 For simplicity, `Base.metadata.create_all` runs at startup (idempotent). A production setup would replace this with proper Alembic migrations — the structure supports it out of the box.
